@@ -1,6 +1,6 @@
 workflow "Build and test" {
   on = "push"
-  resolves = ["git.master"]
+  resolves = ["git.pull_request"]
 }
 
 action "yarn.build" {
@@ -20,8 +20,13 @@ action "yarn.lint" {
   args = "run ci-$GITHUB_SHA:latest yarn lint"
 }
 
-action "git.master" {
+action "eslint.check" {
+  uses = "gimenete/eslint-action@1.0"
+  needs = ["yarn.build"]
+}
+
+action "git.pull_request" {
   uses = "actions/bin/filter@master"
-  needs = ["yarn.test", "yarn.lint"]
-  args = "branch master"
+  needs = ["yarn.test", "yarn.lint", "eslint.check"]
+  args = "ref refs/pulls/*"
 }
