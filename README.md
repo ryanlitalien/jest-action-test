@@ -31,7 +31,7 @@ yarn lint
 ### To build
 
 ```
-docker build -t jest-action-test . -f ".github/Dockerfile.test"
+docker build -t jest-action-test . -f ".github/Dockerfile"
 ```
 
 #### To run

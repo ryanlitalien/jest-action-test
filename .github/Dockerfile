@@ -15,10 +15,3 @@ RUN yarn install
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
-
-#RUN yarn test
-
-#COPY .github/entrypoint.sh /entrypoint.sh
-
-#ENTRYPOINT ["/entrypoint.sh"]
-#CMD [""]

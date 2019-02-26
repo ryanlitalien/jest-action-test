@@ -1,10 +1,13 @@
 module.exports = {
   env: {
-    jest: true
+    jest: true,
+    node: true,
+    es6: true,
+    browser: true
   },
   extends: [
     // add more generic rulesets here, such as:
-    // 'eslint:recommended',
+    'eslint:recommended',
     'plugin:vue/recommended'
   ],
   rules: {
