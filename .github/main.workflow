@@ -20,13 +20,8 @@ action "yarn.lint" {
   args = "run ci-$GITHUB_SHA:latest yarn lint"
 }
 
-action "eslint.check" {
-  uses = "gimenete/eslint-action@1.0"
-  needs = ["yarn.build"]
-}
-
 action "git.pull_request" {
   uses = "actions/bin/filter@master"
-  needs = ["yarn.test", "yarn.lint", "eslint.check"]
+  needs = ["yarn.test", "yarn.lint"]
   args = "ref refs/pulls/*"
 }
