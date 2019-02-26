@@ -4,8 +4,5 @@ workflow "Build and test" {
 }
 
 action "Test" {
-  uses = "rkusa/jest-action@master"
-  env = {
-    JEST_CMD = "yarn test"
-  }
+  uses = "ryanlitalien/jest-action@master"
 }
