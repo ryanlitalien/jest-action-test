@@ -10,7 +10,7 @@ action "yarn.build" {
 
 action "yarn.test" {
   uses = "actions/docker/cli@master"
-  needs = ["yarn.test"]
+  needs = ["yarn.build"]
   args = "run ci-$GITHUB_SHA:latest yarn test"
 }
 
