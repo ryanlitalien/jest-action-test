@@ -5,7 +5,7 @@ workflow "Build and test" {
 
 action "yarn.build" {
   uses = "actions/docker/cli@master"
-  args = "build -f .github/Dockerfile.test -t ci-$GITHUB_SHA:latest ."
+  args = "build -f .github/Dockerfile -t ci-$GITHUB_SHA:latest ."
 }
 
 action "yarn.test" {
