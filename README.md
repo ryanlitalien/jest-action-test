@@ -1,5 +1,5 @@
 # jest-action-test
-Example use of Github Action "jest-action"
+Full example of using Github Actions with Jest, Vue and Yarn
 
 ## Project setup
 ```
@@ -26,5 +26,17 @@ yarn test
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Docker
+
+### To build
+
+```
+docker build -t jest-action-test . -f ".github/Dockerfile.test"
+```
+
+#### To run
+
+```
+docker run jest-action-test yarn test
+docker run jest-action-test yarn lint
+```
