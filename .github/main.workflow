@@ -23,5 +23,5 @@ action "yarn.lint" {
 action "git.pull_request" {
   uses = "actions/bin/filter@master"
   needs = ["yarn.test", "yarn.lint"]
-  args = "ref refs/pulls/*"
+  args = "ref refs/heads/*"
 }
